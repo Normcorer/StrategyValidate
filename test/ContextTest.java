@@ -8,6 +8,39 @@ import strategy.ValidateVerify;
 import static org.junit.Assert.assertEquals;
 
 public class ContextTest {
+
+    @Test
+    public void testSize() {
+        // Arrange
+        Context context = new Context();
+
+        // Act
+        int size = context.size();
+
+        // Assert
+        assertEquals(0, size);
+    }
+
+    @Test
+    public void testAddStrategy_RemoveAll() {
+        // Arrange
+        Context context = new Context();
+        context.addStrategy(new PasswordVerify("123456"));
+
+        // Act
+        int size = context.size();
+
+        // Assert
+        assertEquals(1, size);
+
+        // Act
+        context.removeAll();
+        size = context.size();
+
+        // Assert
+        assertEquals(0, size);
+    }
+
     @Test
     public void testContext() {
         // Case1: 密码不正确
