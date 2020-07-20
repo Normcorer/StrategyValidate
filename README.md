@@ -129,6 +129,3 @@ public class Context {
         assertEquals(ResultEnum.SUCCESS.getValue(), exec.getCode());
     }
 ```
-
-## 案例Demo
-**[策略模式简单登录校验案例](https://github.com/Normcorer/StrategyValidate.git)**
